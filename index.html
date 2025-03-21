@@ -8,26 +8,29 @@
         header, footer { background: #081119; color: white; text-align: center; padding: 20px; }
         nav a { margin: 0 10px; color: white; text-decoration: none; cursor: pointer; transition: color 0.3s, transform 0.3s; }
         nav a:hover { color: #ff6347; transform: scale(1.1); }
-        main { text-align: center; flex: 1; padding: 20px; display: flex; justify-content: space-between;}
-        .tab-content { display: none; flex: 1; }
+        main { text-align: center; flex: 1; padding: 20px; display: flex; justify-content: center; align-items: center; margin-top: 125px;}
+        .tab-content { display: none; }
         .active { display: block; }
-        header { display: flex; justify-content: space-between; align-items: center; }
+        header { display: flex; justify-content: space-between; align-items: center; position: fixed; width: 98%; }
         header h2 { margin: 0 300px 0 0; }
-        img { border-radius: 50px;}
+        
 
         /* Left and Right Panels */
-        .left, .right { position: fixed; top: 140px; width: 200px; padding: 20px; background: #00294e; color: white; height: calc(100vh - 200px); overflow-y: auto; text-align: left;}
+        .left, .right { position: fixed; top: 120px; width: 200px; padding: 20px; background: #00294e; color: white; height: calc(100vh - 200px); overflow-y: auto; text-align: left; border-radius: 25px;}
         .left { left: -220px; transition: left 0.5s ease; }
         .right { right: -220px; transition: right 0.5s ease; }
         .left:hover { left: 0; }
         .right:hover { right: 0; }
-
+        .home-tabs img {width: 150px; cursor: pointer; margin: 10px; transition: transform 0.3s;}
+        .home-tabs img:hover {transform: scale(1.1);}
+        .about-tabs img {width: 300px; cursor: pointer; margin: 10px; transition: transform 0.3s;}
+        .about-tabs img:hover {transform: scale(1.1);}
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <img src="logo.png" alt="Your Logo" width="100">
+        <img src="logo.png" alt="Your Logo" width="75" style="border-radius: 50px;">
         <h2>Hans Michael D. Gabor</h2>
         <nav>
             <a onclick="showTab('home')">HOME</a>
@@ -39,50 +42,254 @@
             <a onclick="showTab('about')">ABOUT</a>
         </nav>
     </header>
+
     <!-- Main Content -->
     <main>
         <div id="home" class="tab-content active">
             <h2>Welcome to My Page!</h2>
-            <p>This is the HOME section.</p>
+            <p>This is the HOME section. Click on the images below to learn more about each topic.</p>
+            <div class="home-tabs">
+                <img src="c.png" alt="C Language" onclick="showTab('c')">
+                <img src="py.png" alt="Python" onclick="showTab('python')">
+                <img src="html.png" alt="HTML" onclick="showTab('html')">
+                <img src="js.png" alt="JavaScript" onclick="showTab('js')">
+                <img src="php.png" alt="PHP" onclick="showTab('php')">
+                <img src="about.png" alt="About" onclick="showTab('about')">
+            </div>
         </div>
+        <!-- C Language Content -->
+        <div id="c" class="tab-content">
+            <img src ="c.png" alt="C Language" width="100">
+            <h2>What is the C Programming Language?</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                The C programming language is a powerful, general-purpose, and procedural 
+                programming language that is widely used for developing system software, 
+                applications, and other performance-critical programs. It was created by 
+                Dennis Ritchie in 1972 at Bell Labs to develop the UNIX operating system, 
+                making it one of the most influential programming languages in modern computing.
+                History of C Language C evolved from an earlier language called B, which 
+                itself was based on BCPL (Basic Combined Programming Language). Dennis Ritchie 
+                designed C to address the limitations of B and to create a more efficient and 
+                flexible language for system-level programming. The language became popular due 
+                to its ability to interact closely with hardware while providing higher-level 
+                abstractions that made it easier to write complex programs.
+                In 1978, Brian Kernighan and Dennis Ritchie published "The C Programming Language", 
+                which became the definitive guide for C programmers worldwide. Over time, C was
+                standardized by the American National Standards Institute (ANSI) in 1989 (ANSI C) 
+                and later by the International Organization for Standardization (ISO) in 1990.<br><br>
 
-        <!-- Template for Tabs with Left and Right Panels -->
-        <script>
-            function createTabContent(id, title, leftItems, rightItems) {
-                if (id === 'about') {
-                    return `
-                        <div id="about" class="tab-content">
-                            <h2>About</h2>
-                            <p>This section is all about My Page</p>
-                        </div>
-                    `;
-                }
-                return `
-                    <div id="${id}" class="tab-content">
-                        <h2>${title}</h2>
-                        <p>This section contains information about ${title}.</p>
-                        <div class="left">
-                            <h3>How To</h3>
-                            <nav>${leftItems.map(item => `<a href="#">${item}</a><br>`).join('')}</nav>
-                        </div>
-                        <div class="right">
-                            <h3>My Projects</h3>
-                            <nav>${rightItems.map(item => `<a href="#">${item}</a><br>`).join('')}</nav>
-                        </div>
-                    </div>
-                `;
-            }
-        </script>
-                                        <!-- id,  title,         tab 1,                                          tab 2-->
-        <script>
-            document.write(createTabContent('c', 'C Language', ['Start', 'Functions', 'Structure', 'File Handling'], ['Flow Chart']));
-            document.write(createTabContent('python', 'Python', ['Basics', 'OOP', 'File Handling'], ['Weather App', 'Diary Box', 'Game Boy']));
-            document.write(createTabContent('html', 'HTML', ['Start', 'Forms', 'Tables'], ['Dog API', 'Cat API', 'Quote API']));
-            document.write(createTabContent('js', 'JavaScript', ['Events', 'DOM', 'AJAX'], ['To-Do App', 'Calculator', 'API Fetcher']));
-            document.write(createTabContent('php', 'PHP', ['Basics', 'CRUD', 'Sessions'], ['Blog System', 'Login System', 'CMS']));
-            document.write(createTabContent('about', 'About My Page'));
-        </script>
+                <b>Key Features of C Language:</b><br>
+        Simple and Efficient: C provides basic building blocks for programs like variables, 
+        data types, functions, and control structures, ensuring fast execution and low memory usage.<br>
+        Portability: Programs written in C can be compiled and executed on various platforms with minimal changes.<br>
+        Low-Level Access: C allows direct manipulation of memory using pointers, enabling developers to interact with hardware efficiently.<br>
+        Structured Programming: C supports the structured approach through functions, enabling code modularity and reusability.<br>
+        Rich Standard Library: C offers a robust set of standard libraries to perform common tasks like input/output, 
+        mathematical operations, and string manipulation.
+        Dynamic Memory Management: C provides functions such as malloc() and free() for manual memory allocation and deallocation.<br>
+        Extensibility: You can extend C programs by integrating assembly code or interfacing with other languages.<br>
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('start_c')">Start</a><br>
+                    <a href="#">Functions</a><br>
+                    <a href="#">Structure</a><br>
+                    <a href="#">File Handling</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a href="#">Flow Chart</a><br>
+                </nav>
+            </div>
+        </div>
+        <!-- Start of the C Language Content from Sub Content -->
+        <div id="start_c" class="tab-content">
+            <h2>The C Language Wow</h2>
+            <p>We are starting naglibog pa gud ko unsaon daghan na kaayo kog lines na g copy paste para mo stay ang sub-contents</p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a href="#">Start</a><br>
+                    <a href="#">Functions</a><br>
+                    <a href="#">Structure</a><br>
+                    <a href="#">File Handling</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a href="#">Flow Chart</a><br>
+                </nav>
+            </div>
+        </div>
+        <!-- End of the C Language Content from Sub Content 
+         
+            Making More Space for Less Confusion of the maker of the code
+        -->
+        <!-- Python Content -->
+        <div id="python" class="tab-content">
+            <img src ="py.png" alt="Python Language" width="100">
+            <h2>What is the Python Programming Language?</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                Python is a high-level, interpreted, and general-purpose programming 
+                language known for its simplicity, readability, and versatility. It was 
+                created by Guido van Rossum and first released in 1991. Python is widely 
+                used in various fields such as web development, data analysis, artificial 
+                intelligence (AI), scientific computing, and automation.
+                Python was designed as a successor to the ABC language, which was intended to be easy to learn but had limitations. Guido van Rossum wanted to create a language that combined simplicity with power, allowing programmers to write clean and efficient code.
+                <br><br><b>Key milestones in Python’s development: </b><br>
+                1991: Python 1.0 released.<br>
+                2000: Python 2.0 introduced features like list comprehensions and garbage collection.<br>
+                2008: Python 3.0 released, focusing on code clarity and modernization (not backward-compatible with Python 2).<br>
+                Today: Python is maintained by the Python Software Foundation and has an active community that drives its continuous improvement.<br>
 
+                <br><br>
+                
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a href="#">Basics</a><br>
+                    <a href="#">OOP</a><br>
+                    <a href="#">File Handling</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a href="#">Weather App</a><br>
+                    <a href="#">Diary Box</a><br>
+                    <a href="#">Game Boy</a><br>
+                </nav>
+            </div>
+        </div>
+        <!-- End of the Python Language Content from Sub Content 
+         
+            Making More Space for Less Confusion of the maker of the code
+        -->
+        <!-- HTML Content -->
+        <div id="html" class="tab-content">
+            <img src ="html.png" alt="HTML" width="100">
+            <h2>What is HTML? (HyperText Markup Language)</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                HTML (HyperText Markup Language) is the standard language used to create 
+                and design web pages. It structures the content on the internet by defining 
+                elements such as headings, paragraphs, images, links, forms, and more. HTML 
+                is the foundation of every webpage and works in combination with CSS (Cascading 
+                Style Sheets) for styling and JavaScript for interactivity. <br><br><b>History of HTML </b><br>1991: HTML was first introduced by Tim Berners-Lee, the inventor of the World Wide Web.
+                <br>1995: HTML 2.0 became the first standardized version by the IETF.
+                <br>1997: HTML 4.0 introduced multimedia and scripting capabilities.
+                <br>2014: HTML5 was released, adding advanced features like video, audio, and responsive design.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a href="#">Start</a><br>
+                    <a href="#">Forms</a><br>
+                    <a href="#">Tables</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a href="#">Dog API</a><br>
+                    <a href="#">Cat API</a><br>
+                    <a href="#">Quote API</a><br>
+                </nav>
+            </div>
+        </div>
+        <!-- End of the HTML Language Content from Sub Content 
+         
+            Making More Space for Less Confusion of the maker of the code
+        -->
+        <!-- JavaScript Content -->
+        <div id="js" class="tab-content">
+            <img src ="js.png" alt="JavaScript" width="100">
+            <h2>What is JavaScript?</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                JavaScript (JS) is a high-level, interpreted programming language that 
+                allows developers to create interactive and dynamic web pages. It is one 
+                of the core technologies of the World Wide Web, along with HTML and CSS. 
+                JavaScript enables client-side functionality such as user input validation, 
+                animations, dynamic content updates, and interactive user interfaces. <br><br><b>History of JavaScript </b><br>
+                1995: Developed by Brendan Eich at Netscape and initially named Mocha, then LiveScript, before becoming JavaScript.
+                <br>1996: JavaScript was standardized by ECMA International as ECMAScript (ES).
+                <br>2015: ECMAScript 6 (ES6) introduced modern syntax like let, const, and arrow functions.
+                <br>Today: JavaScript powers modern web applications through frameworks like React, Angular, and Vue.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a href="#">Events</a><br>
+                    <a href="#">DOM</a><br>
+                    <a href="#">AJAX</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a href="#">To-Do App</a><br>
+                    <a href="#">Calculator</a><br>
+                    <a href="#">API Fetcher</a><br>
+                </nav>
+            </div>
+        </div>
+        <!-- End of the JavaScript Language Content from Sub Content 
+         
+            Making More Space for Less Confusion of the maker of the code
+        -->
+        <!-- PHP Content -->
+        <div id="php" class="tab-content">
+            <img src = "php.png" alt="PHP Language" width="100">
+            <h2>What is PHP?</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                PHP (Hypertext Preprocessor) is a widely-used open-source scripting language designed 
+                for web development. It is primarily executed on the server-side, meaning the code runs 
+                on the web server and generates HTML to display in the user's browser. 
+                PHP allows developers to create dynamic, interactive, and data-driven websites.
+                <br><br><b>History of PHP </b><br>
+                1994: Created by Rasmus Lerdorf as a set of tools to track website visits.<br>
+                1995: Released as Personal Home Page Tools (PHP Tools).<br>
+                1997: Improved by Zeev Suraski and Andi Gutmans, leading to PHP 3.0.<br>
+                2000: PHP 4 introduced the Zend Engine for better performance.<br>
+                2015: PHP 7 enhanced speed and memory efficiency.<br>
+                2020: PHP 8 introduced new features like the JIT compiler for performance improvements.
+
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a href="#">Basics</a><br>
+                    <a href="#">CRUD</a><br>
+                    <a href="#">Sessions</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a href="#">Blog System</a><br>
+                    <a href="#">Login System</a><br>
+                    <a href="#">CMS</a><br>
+                </nav>
+            </div>
+        </div>
+        <!-- End of the PHP Language Content from Sub Content 
+         
+            Making More Space for Less Confusion of the maker of the code
+        -->
+        <!-- About Content -->
+        <div id="about" class="tab-content">
+            <h2>About</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">I am creating this webpage for my **Integrative Programming and Technologies** project. 
+                This webpage will provide a brief description of various programming languages and how to use them. 
+                I have also included my experiences working with these languages below these page.</p>
+                <div class="about-tabs">
+                    <a href="https://h1n2zo.github.io/API-Generator/"><img src="api.png" alt="API Webpage"></a>
+                </div>
+        </div>
     </main>
 
     <!-- Footer -->
