@@ -40,6 +40,38 @@
         }
         .social-login button:hover {
             opacity: 0.8;}
+
+            @media (max-width: 480px) {
+            .remember-me {
+                display: flex;
+                align-items: center; 
+                margin: 10px;
+                white-space: nowrap;
+            }
+            .remember-me input {
+                margin-right: 10px;
+            }
+
+            label {
+                margin-right: 200px;
+            }
+        }
+
+            @media (max-width: 380px) {
+            .remember-me {
+                display: flex;
+                align-items: center; 
+                margin: 10px;
+                white-space: nowrap;
+            }
+            .remember-me input {
+                margin-right: 10px;
+            }
+
+            label {
+                margin-right: 100px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -53,7 +85,7 @@
                 <input type="checkbox" id="remember">
                 <label>Remember Me</label>
             </div>
-            <button type="button" onclick="location.href='main.html'">Login</button>
+            <button type="submit">Login</button>
             <p>or login with</p>
             <div class="social-login">
                 <button type="button" onclick="location.href='main.html'">Facebook</button>
