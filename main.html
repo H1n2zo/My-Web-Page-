@@ -94,38 +94,197 @@
                 <h3>How To</h3>
                 <nav>
                     <a onclick="showTab('start_c')">Start</a><br>
-                    <a href="#">Functions</a><br>
-                    <a href="#">Structure</a><br>
-                    <a href="#">File Handling</a><br>
+                    <a onclick="showTab('functions')">Functions</a><br>
+                    <a onclick="showTab('structures')">Structure</a><br>
+                    <a onclick="showTab('file_handling')">File Handling</a><br>
                 </nav>
             </div>
             <div class="right">
                 <h3>My Projects</h3>
                 <nav>
-                    <a href="#">Flow Chart</a><br>
+                    <a onclick="showTab('flow_chart')">Flow Chart</a><br>
                 </nav>
             </div>
         </div>
         <!-- Start of the C Language Content from Sub Content -->
         <div id="start_c" class="tab-content">
-            <h2>The C Language Wow</h2>
-            <p>We are starting naglibog pa gud ko unsaon daghan na kaayo kog lines na g copy paste para mo stay ang sub-contents</p>
-            <div class="left">
+            <h2>Get Started With C</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                To start using C, you need two things:
+                <br><br>
+                • A text editor, like Notepad, to write C code<br>
+                • A compiler, like GCC, to translate the C code into a language that the computer will understand<br><br>
+                There are many text editors and compilers to choose from. In this tutorial, we will use an IDE (see below).</p>
+            <h2>C install IDE</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                An IDE (Integrated Development Environment) is used to edit AND compile the code.<br><br>
+
+                Popular IDE's include Code::Blocks, Eclipse, and Visual Studio. These are all free, and they can be used to both edit and debug C code.
+                <br><br>
+                Note: Web-based IDE's can work as well, but functionality is limited.
+                <br><br>
+                We will use Code::Blocks in our tutorial, which we believe is a good place to start.
+<br><br>
+                You can find the latest version of Codeblocks at http://www.codeblocks.org/. Download the mingw-setup.exe file, which will install the text editor with a compiler.
+
+
+            </p><div class="left">
                 <h3>How To</h3>
                 <nav>
-                    <a href="#">Start</a><br>
-                    <a href="#">Functions</a><br>
-                    <a href="#">Structure</a><br>
-                    <a href="#">File Handling</a><br>
+                    <a onclick="showTab('start_c')">Start</a><br>
+                    <a onclick="showTab('functions')">Functions</a><br>
+                    <a onclick="showTab('structures')">Structure</a><br>
+                    <a onclick="showTab('file_handling')">File Handling</a><br>
                 </nav>
             </div>
             <div class="right">
                 <h3>My Projects</h3>
                 <nav>
-                    <a href="#">Flow Chart</a><br>
+                    <a onclick="showTab('flow_chart')">Flow Chart</a><br>
                 </nav>
             </div>
         </div>
+        <div id="functions" class="tab-content">
+            <h2>Functions in C</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                Functions in C are blocks of code that perform a specific task. They help in organizing code, making it reusable and easier to understand. Here are some key points:
+                <br><br>
+                • Declaration: Specifies the function's name, return type, and parameters.<br>
+                • Definition: Contains the actual code to be executed.<br>
+                • Calling: Invokes the function to execute its code.<br><br>
+                Example:
+                <pre><code>
+                int add(int a, int b) {
+                    return a + b;
+                }
+
+                int main() {
+                    int result = add(5, 3);
+                    printf("Result: %d", result);
+                    return 0;
+                }
+                </code></pre>
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('start_c')">Start</a><br>
+                    <a onclick="showTab('functions')">Functions</a><br>
+                    <a onclick="showTab('structures')">Structure</a><br>
+                    <a onclick="showTab('file_handling')">File Handling</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('flow_chart')">Flow Chart</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="structures" class="tab-content">
+            <h2>Structures in C</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                Structures in C allow you to group different data types together. They are useful for creating complex data types that represent real-world entities. Key points:
+                <br><br>
+                • Definition: Uses the struct keyword.<br>
+                • Members: Variables within the structure.<br>
+                • Access: Use the dot operator to access members.<br><br>
+                Example:
+                <pre><code>
+                struct Person {
+                    char name[50];
+                    int age;
+                };
+
+                int main() {
+                    struct Person person1;
+                    strcpy(person1.name, "John");
+                    person1.age = 30;
+                    printf("Name: %s, Age: %d", person1.name, person1.age);
+                    return 0;
+                }
+                </code></pre>
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('start_c')">Start</a><br>
+                    <a onclick="showTab('functions')">Functions</a><br>
+                    <a onclick="showTab('structures')">Structure</a><br>
+                    <a onclick="showTab('file_handling')">File Handling</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('flow_chart')">Flow Chart</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="file_handling" class="tab-content">
+            <h2>File Handling in C</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                File handling in C allows you to create, read, write, and close files. It is essential for data storage and retrieval. Key functions:
+                <br><br>
+                • fopen(): Opens a file.<br>
+                • fprintf(): Writes formatted data to a file.<br>
+                • fscanf(): Reads formatted data from a file.<br>
+                • fclose(): Closes a file.<br><br>
+                Example:
+                <pre><code>
+                int main() {
+                    FILE *file = fopen("example.txt", "w");
+                    if (file == NULL) {
+                        printf("Error opening file!");
+                        return 1;
+                    }
+                    fprintf(file, "Hello, World!");
+                    fclose(file);
+                    return 0;
+                }
+                </code></pre>
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('start_c')">Start</a><br>
+                    <a onclick="showTab('functions')">Functions</a><br>
+                    <a onclick="showTab('structures')">Structure</a><br>
+                    <a onclick="showTab('file_handling')">File Handling</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('flow_chart')">Flow Chart</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="flow_chart" class="tab-content">
+            <h2>Flow Chart Project</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                This project involves creating a flow chart using C. It demonstrates the use of graphics libraries to visualize algorithms and processes.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('start_c')">Start</a><br>
+                    <a onclick="showTab('functions')">Functions</a><br>
+                    <a onclick="showTab('structures')">Structure</a><br>
+                    <a onclick="showTab('file_handling')">File Handling</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('flow_chart')">Flow Chart</a><br>
+                </nav>
+            </div>
+        </div>
+        
         <!-- End of the C Language Content from Sub Content 
          
             Making More Space for Less Confusion of the maker of the code
@@ -146,24 +305,177 @@
                 2000: Python 2.0 introduced features like list comprehensions and garbage collection.<br>
                 2008: Python 3.0 released, focusing on code clarity and modernization (not backward-compatible with Python 2).<br>
                 Today: Python is maintained by the Python Software Foundation and has an active community that drives its continuous improvement.<br>
-
-                <br><br>
                 
             </p>
             <div class="left">
                 <h3>How To</h3>
                 <nav>
-                    <a href="#">Basics</a><br>
-                    <a href="#">OOP</a><br>
-                    <a href="#">File Handling</a><br>
+                    <a onclick="showTab('basics')">Basics</a><br>
+                    <a onclick="showTab('oop')">OOP</a><br>
+                    <a onclick="showTab('file_handling')">File Handling</a><br>
                 </nav>
             </div>
             <div class="right">
                 <h3>My Projects</h3>
                 <nav>
-                    <a href="#">Weather App</a><br>
-                    <a href="#">Diary Box</a><br>
-                    <a href="#">Game Boy</a><br>
+                    <a onclick="showTab('weather_app')">Weather App</a><br>
+                    <a onclick="showTab('diary_box')">Diary Box</a><br>
+                    <a onclick="showTab('game_boy')">Game Boy</a><br>
+                </nav>
+            </div>
+        </div>
+        <!-- Start of the Python Language Content from Sub Content -->
+        <div id="basics" class="tab-content">
+            <h2>Python Basics</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                Python is known for its simple syntax, which makes it easy to learn and use. Here are some basic concepts:
+                <br><br>
+                • Variables: Used to store data values.<br>
+                • Data Types: Common types include integers, floats, strings, and lists.<br>
+                • Control Structures: Includes if statements, loops (for, while), and functions.<br>
+                • Functions: Defined using the def keyword.<br>
+                • Modules: Reusable pieces of code that can be imported into your program.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('basics')">Basics</a><br>
+                    <a onclick="showTab('oop')">OOP</a><br>
+                    <a onclick="showTab('file_handling')">File Handling</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('weather_app')">Weather App</a><br>
+                    <a onclick="showTab('diary_box')">Diary Box</a><br>
+                    <a onclick="showTab('game_boy')">Game Boy</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="oop" class="tab-content">
+            <h2>Object-Oriented Programming (OOP) in Python</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                Python supports OOP, which allows you to create classes and objects. Key concepts include:
+                <br><br>
+                • Classes: Blueprints for creating objects.<br>
+                • Objects: Instances of classes.<br>
+                • Inheritance: Mechanism to create a new class using details of an existing class.<br>
+                • Polymorphism: Ability to use a common interface for multiple forms.<br>
+                • Encapsulation: Restricting access to some of the object's components.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('basics')">Basics</a><br>
+                    <a onclick="showTab('oop')">OOP</a><br>
+                    <a onclick="showTab('file_handling')">File Handling</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('weather_app')">Weather App</a><br>
+                    <a onclick="showTab('diary_box')">Diary Box</a><br>
+                    <a onclick="showTab('game_boy')">Game Boy</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="file_handling" class="tab-content">
+            <h2>File Handling in Python</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                Python provides built-in functions for reading and writing files. Key functions include:
+                <br><br>
+                • open(): Opens a file and returns a file object.<br>
+                • read(): Reads the content of a file.<br>
+                • write(): Writes content to a file.<br>
+                • close(): Closes the file.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('basics')">Basics</a><br>
+                    <a onclick="showTab('oop')">OOP</a><br>
+                    <a onclick="showTab('file_handling')">File Handling</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('weather_app')">Weather App</a><br>
+                    <a onclick="showTab('diary_box')">Diary Box</a><br>
+                    <a onclick="showTab('game_boy')">Game Boy</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="weather_app" class="tab-content">
+            <h2>Weather App</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                This project involves creating a weather application using Python. It fetches weather data from an API and displays it to the user.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('basics')">Basics</a><br>
+                    <a onclick="showTab('oop')">OOP</a><br>
+                    <a onclick="showTab('file_handling')">File Handling</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('weather_app')">Weather App</a><br>
+                    <a onclick="showTab('diary_box')">Diary Box</a><br>
+                    <a onclick="showTab('game_boy')">Game Boy</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="diary_box" class="tab-content">
+            <h2>Diary Box</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                This project involves creating a diary application using Python. Users can write, save, and view their diary entries.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('basics')">Basics</a><br>
+                    <a onclick="showTab('oop')">OOP</a><br>
+                    <a onclick="showTab('file_handling')">File Handling</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('weather_app')">Weather App</a><br>
+                    <a onclick="showTab('diary_box')">Diary Box</a><br>
+                    <a onclick="showTab('game_boy')">Game Boy</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="game_boy" class="tab-content">
+            <h2>Game Boy</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                This project involves creating a simple game using Python. It demonstrates the use of game development libraries like Pygame.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('basics')">Basics</a><br>
+                    <a onclick="showTab('oop')">OOP</a><br>
+                    <a onclick="showTab('file_handling')">File Handling</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('weather_app')">Weather App</a><br>
+                    <a onclick="showTab('diary_box')">Diary Box</a><br>
+                    <a onclick="showTab('game_boy')">Game Boy</a><br>
                 </nav>
             </div>
         </div>
@@ -188,17 +500,100 @@
             <div class="left">
                 <h3>How To</h3>
                 <nav>
-                    <a href="#">Start</a><br>
-                    <a href="#">Forms</a><br>
-                    <a href="#">Tables</a><br>
+                    <a onclick="showTab('start_html')">Start</a><br>
+                    <a onclick="showTab('forms_html')">Forms</a><br>
+                    <a onclick="showTab('tables_html')">Tables</a><br>
                 </nav>
             </div>
             <div class="right">
                 <h3>My Projects</h3>
                 <nav>
-                    <a href="#">Dog API</a><br>
-                    <a href="#">Cat API</a><br>
-                    <a href="#">Quote API</a><br>
+                    <a href="https://h1n2zo.github.io/Dog-API/">Dog API</a><br>
+                    <a href="https://h1n2zo.github.io/Cat-API/">Cat API</a><br>
+                    <a href="https://h1n2zo.github.io/Quote-API/">Quote API</a><br>
+                </nav>
+            </div>
+        </div>
+        <div id="start_html" class="tab-content">
+            <h2>Getting Started with HTML</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                HTML is the backbone of web development. To get started, you need a text editor (like Notepad or VS Code) and a web browser. Here are the basics:
+                <br><br>
+                • Elements: Building blocks of HTML, defined by tags.<br>
+                • Attributes: Provide additional information about elements.<br>
+                • Nesting: Placing elements within other elements.<br>
+                • Doctype: Defines the document type and version of HTML.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('start_html')">Start</a><br>
+                    <a onclick="showTab('forms_html')">Forms</a><br>
+                    <a onclick="showTab('tables_html')">Tables</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a href="https://h1n2zo.github.io/Dog-API/">Dog API</a><br>
+                    <a href="https://h1n2zo.github.io/Cat-API/">Cat API</a><br>
+                    <a href="https://h1n2zo.github.io/Quote-API/">Quote API</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="forms_html" class="tab-content">
+            <h2>HTML Forms</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                Forms are used to collect user input. Key elements include:
+                <br><br>
+                • form: Defines the form.<br>
+                • input: Defines an input field.<br>
+                • label: Defines a label for an input element.<br>
+                • button: Defines a clickable button.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('start_html')">Start</a><br>
+                    <a onclick="showTab('forms_html')">Forms</a><br>
+                    <a onclick="showTab('tables_html')">Tables</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a href="https://h1n2zo.github.io/Dog-API/">Dog API</a><br>
+                    <a href="https://h1n2zo.github.io/Cat-API/">Cat API</a><br>
+                    <a href="https://h1n2zo.github.io/Quote-API/">Quote API</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="tables_html" class="tab-content">
+            <h2>HTML Tables</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                Tables are used to display data in a tabular format. Key elements include:
+                <br><br>
+                • table: Defines the table.<br>
+                • tr: Defines a table row.<br>
+                • th: Defines a table header.<br>
+                • td: Defines a table cell.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('start_html')">Start</a><br>
+                    <a onclick="showTab('forms_html')">Forms</a><br>
+                    <a onclick="showTab('tables_html')">Tables</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a href="https://h1n2zo.github.io/Dog-API/">Dog API</a><br>
+                    <a href="https://h1n2zo.github.io/Cat-API/">Cat API</a><br>
+                    <a href="https://h1n2zo.github.io/Quote-API/">Quote API</a><br>
                 </nav>
             </div>
         </div>
@@ -224,17 +619,167 @@
             <div class="left">
                 <h3>How To</h3>
                 <nav>
-                    <a href="#">Events</a><br>
-                    <a href="#">DOM</a><br>
-                    <a href="#">AJAX</a><br>
+                    <a onclick="showTab('events')">Events</a><br>
+                    <a onclick="showTab('dom')">DOM</a><br>
+                    <a onclick="showTab('ajax')">AJAX</a><br>
                 </nav>
             </div>
             <div class="right">
                 <h3>My Projects</h3>
                 <nav>
-                    <a href="#">To-Do App</a><br>
-                    <a href="#">Calculator</a><br>
-                    <a href="#">API Fetcher</a><br>
+                    <a onclick="showTab('todo_app')">To-Do App</a><br>
+                    <a onclick="showTab('calculator')">Calculator</a><br>
+                    <a onclick="showTab('api_fetcher')">API Fetcher</a><br>
+                </nav>
+            </div>
+        </div>
+        <div id="events" class="tab-content">
+            <h2>JavaScript Events</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                JavaScript events are actions that occur when the user interacts with the web page. Common events include:
+                <br><br>
+                • onclick: Triggered when an element is clicked.<br>
+                • onmouseover: Triggered when the mouse pointer is over an element.<br>
+                • onload: Triggered when the page has finished loading.<br>
+                • onsubmit: Triggered when a form is submitted.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('events')">Events</a><br>
+                    <a onclick="showTab('dom')">DOM</a><br>
+                    <a onclick="showTab('ajax')">AJAX</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('todo_app')">To-Do App</a><br>
+                    <a onclick="showTab('calculator')">Calculator</a><br>
+                    <a onclick="showTab('api_fetcher')">API Fetcher</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="dom" class="tab-content">
+            <h2>JavaScript DOM</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. Key concepts include:
+                <br><br>
+                • Selecting Elements: Methods like getElementById, getElementsByClassName, and querySelector.<br>
+                • Manipulating Elements: Changing content, attributes, and styles.<br>
+                • Event Handling: Adding event listeners to elements.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('events')">Events</a><br>
+                    <a onclick="showTab('dom')">DOM</a><br>
+                    <a onclick="showTab('ajax')">AJAX</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('todo_app')">To-Do App</a><br>
+                    <a onclick="showTab('calculator')">Calculator</a><br>
+                    <a onclick="showTab('api_fetcher')">API Fetcher</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="ajax" class="tab-content">
+            <h2>JavaScript AJAX</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                AJAX (Asynchronous JavaScript and XML) is a technique for creating fast and dynamic web pages. It allows web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes. Key concepts include:
+                <br><br>
+                • XMLHttpRequest: The traditional way to make AJAX requests.<br>
+                • Fetch API: A modern, promise-based way to make AJAX requests.<br>
+                • JSON: Common format for sending and receiving data.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('events')">Events</a><br>
+                    <a onclick="showTab('dom')">DOM</a><br>
+                    <a onclick="showTab('ajax')">AJAX</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('todo_app')">To-Do App</a><br>
+                    <a onclick="showTab('calculator')">Calculator</a><br>
+                    <a onclick="showTab('api_fetcher')">API Fetcher</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="todo_app" class="tab-content">
+            <h2>To-Do App</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                This project involves creating a simple to-do list application using JavaScript. It demonstrates the use of DOM manipulation and event handling.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('events')">Events</a><br>
+                    <a onclick="showTab('dom')">DOM</a><br>
+                    <a onclick="showTab('ajax')">AJAX</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('todo_app')">To-Do App</a><br>
+                    <a onclick="showTab('calculator')">Calculator</a><br>
+                    <a onclick="showTab('api_fetcher')">API Fetcher</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="calculator" class="tab-content">
+            <h2>Calculator</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                This project involves creating a simple calculator using JavaScript. It demonstrates the use of event handling and basic arithmetic operations.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('events')">Events</a><br>
+                    <a onclick="showTab('dom')">DOM</a><br>
+                    <a onclick="showTab('ajax')">AJAX</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('todo_app')">To-Do App</a><br>
+                    <a onclick="showTab('calculator')">Calculator</a><br>
+                    <a onclick="showTab('api_fetcher')">API Fetcher</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="api_fetcher" class="tab-content">
+            <h2>API Fetcher</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                This project involves creating an application that fetches data from an API using JavaScript. It demonstrates the use of the Fetch API and handling JSON data.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('events')">Events</a><br>
+                    <a onclick="showTab('dom')">DOM</a><br>
+                    <a onclick="showTab('ajax')">AJAX</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('todo_app')">To-Do App</a><br>
+                    <a onclick="showTab('calculator')">Calculator</a><br>
+                    <a onclick="showTab('api_fetcher')">API Fetcher</a><br>
                 </nav>
             </div>
         </div>
@@ -263,17 +808,169 @@
             <div class="left">
                 <h3>How To</h3>
                 <nav>
-                    <a href="#">Basics</a><br>
-                    <a href="#">CRUD</a><br>
-                    <a href="#">Sessions</a><br>
+                    <a onclick="showTab('basics_php')">Basics</a><br>
+                    <a onclick="showTab('crud_php')">CRUD</a><br>
+                    <a onclick="showTab('sessions_php')">Sessions</a><br>
                 </nav>
             </div>
             <div class="right">
                 <h3>My Projects</h3>
                 <nav>
-                    <a href="#">Blog System</a><br>
-                    <a href="#">Login System</a><br>
-                    <a href="#">CMS</a><br>
+                    <a onclick="showTab('blog_system')">Blog System</a><br>
+                    <a onclick="showTab('login_system')">Login System</a><br>
+                    <a onclick="showTab('cms')">CMS</a><br>
+                </nav>
+            </div>
+        </div>
+        <div id="basics_php" class="tab-content">
+            <h2>PHP Basics</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                PHP is a server-side scripting language designed for web development. Here are some basic concepts:
+                <br><br>
+                • Variables: Used to store data values, prefixed with a $ symbol.<br>
+                • Data Types: Common types include integers, floats, strings, arrays, and objects.<br>
+                • Control Structures: Includes if statements, loops (for, while), and functions.<br>
+                • Functions: Defined using the function keyword.<br>
+                • Superglobals: Built-in variables like $_GET, $_POST, $_SESSION, and $_COOKIE.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('basics_php')">Basics</a><br>
+                    <a onclick="showTab('crud_php')">CRUD</a><br>
+                    <a onclick="showTab('sessions_php')">Sessions</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('blog_system')">Blog System</a><br>
+                    <a onclick="showTab('login_system')">Login System</a><br>
+                    <a onclick="showTab('cms')">CMS</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="crud_php" class="tab-content">
+            <h2>PHP CRUD Operations</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                CRUD stands for Create, Read, Update, and Delete. These are the basic operations for managing data in a database. Key functions include:
+                <br><br>
+                • Create: Inserting new records into the database using SQL INSERT statements.<br>
+                • Read: Retrieving data from the database using SQL SELECT statements.<br>
+                • Update: Modifying existing records using SQL UPDATE statements.<br>
+                • Delete: Removing records from the database using SQL DELETE statements.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('basics_php')">Basics</a><br>
+                    <a onclick="showTab('crud_php')">CRUD</a><br>
+                    <a onclick="showTab('sessions_php')">Sessions</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('blog_system')">Blog System</a><br>
+                    <a onclick="showTab('login_system')">Login System</a><br>
+                    <a onclick="showTab('cms')">CMS</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="sessions_php" class="tab-content">
+            <h2>PHP Sessions</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                Sessions in PHP are used to store user information across multiple pages. Key functions include:
+                <br><br>
+                • session_start(): Starts a new session or resumes an existing one.<br>
+                • $_SESSION: Superglobal array used to store session variables.<br>
+                • session_destroy(): Destroys all data registered to a session.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('basics_php')">Basics</a><br>
+                    <a onclick="showTab('crud_php')">CRUD</a><br>
+                    <a onclick="showTab('sessions_php')">Sessions</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('blog_system')">Blog System</a><br>
+                    <a onclick="showTab('login_system')">Login System</a><br>
+                    <a onclick="showTab('cms')">CMS</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="blog_system" class="tab-content">
+            <h2>Blog System</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                This project involves creating a blog system using PHP. It demonstrates the use of CRUD operations, user authentication, and session management.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('basics_php')">Basics</a><br>
+                    <a onclick="showTab('crud_php')">CRUD</a><br>
+                    <a onclick="showTab('sessions_php')">Sessions</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('blog_system')">Blog System</a><br>
+                    <a onclick="showTab('login_system')">Login System</a><br>
+                    <a onclick="showTab('cms')">CMS</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="login_system" class="tab-content">
+            <h2>Login System</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                This project involves creating a login system using PHP. It demonstrates the use of user authentication, session management, and form handling.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('basics_php')">Basics</a><br>
+                    <a onclick="showTab('crud_php')">CRUD</a><br>
+                    <a onclick="showTab('sessions_php')">Sessions</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('blog_system')">Blog System</a><br>
+                    <a onclick="showTab('login_system')">Login System</a><br>
+                    <a onclick="showTab('cms')">CMS</a><br>
+                </nav>
+            </div>
+        </div>
+
+        <div id="cms" class="tab-content">
+            <h2>Content Management System (CMS)</h2>
+            <p style="text-align: justify; margin-left: 40px; margin-right: 40px;">
+                This project involves creating a content management system using PHP. It demonstrates the use of CRUD operations, user authentication, session management, and file handling.
+            </p>
+            <div class="left">
+                <h3>How To</h3>
+                <nav>
+                    <a onclick="showTab('basics_php')">Basics</a><br>
+                    <a onclick="showTab('crud_php')">CRUD</a><br>
+                    <a onclick="showTab('sessions_php')">Sessions</a><br>
+                </nav>
+            </div>
+            <div class="right">
+                <h3>My Projects</h3>
+                <nav>
+                    <a onclick="showTab('blog_system')">Blog System</a><br>
+                    <a onclick="showTab('login_system')">Login System</a><br>
+                    <a onclick="showTab('cms')">CMS</a><br>
                 </nav>
             </div>
         </div>
